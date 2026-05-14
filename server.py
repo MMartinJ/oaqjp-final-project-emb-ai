@@ -11,6 +11,9 @@ def sent_analyzer():
 
     dominant_emotion = response['dominant_emotion']
 
+    if dominant_emotion is None:
+        return "Invalid text! Please try again."
+        
     return f"For the given statement, the system response is {response}. The dominant emotion is {dominant_emotion}."
 
 @app.route("/")
